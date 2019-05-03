@@ -5,16 +5,14 @@ const scripts = require("./scripts.js");
 
 function watchFiles() {
   gulp.watch("./app/assets/styles/**/*.css", gulp.series(styles, cssInject));
-  gulp.watch("./app/index.html", function() {
-    browsersync.reload();
-  });
+  gulp.watch("./app/index.html", browserSyncReload);
   gulp.watch(
     "./app/assets/scripts/**/*.js",
-    gulp.series(scripts, scriptsRefresh)
+    gulp.series(scripts, browserSyncReload)
   );
 }
 
-function scriptsRefresh(cb) {
+function browserSyncReload(cb) {
   browsersync.reload();
   cb();
 }
