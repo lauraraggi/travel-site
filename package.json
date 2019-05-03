@@ -18,6 +18,7 @@
   "homepage": "https://github.com/SelkieBride/travel-site#readme",
   "devDependencies": {
     "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
     "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.5",
@@ -39,6 +40,7 @@
   "dependencies": {
     "core-util-is": "^1.0.2",
     "jquery": "^3.4.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "waypoints": "^4.0.1"
   }
 }
