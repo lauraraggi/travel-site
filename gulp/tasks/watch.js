@@ -1,33 +1,37 @@
 const gulp = require("gulp");
 const browsersync = require("browser-sync").create();
 const { styles } = require("./styles.js");
+const scripts = require("./scripts.js");
 
 function watchFiles() {
   gulp.watch("./app/assets/styles/**/*.css", gulp.series(styles, cssInject));
   gulp.watch("./app/index.html", function() {
-    browserSyncReload();
+    browsersync.reload();
   });
+  gulp.watch(
+    "./app/assets/scripts/**/*.js",
+    gulp.series(scripts, scriptsRefresh)
+  );
 }
+
+function scriptsRefresh(cb) {
+  browsersync.reload();
+  cb();
+}
+
 // BrowserSync
-function browserSync(done) {
+function browserSync(cb) {
   browsersync.init({
     server: {
       baseDir: "app"
     },
     port: 3000
   });
-  done();
-}
-
-// BrowserSync Reload
-function browserSyncReload(done) {
-  browsersync.reload();
-  done();
+  cb();
 }
 
 function cssInject() {
   return gulp.src("./app/temp/styles/styles.css").pipe(browsersync.stream());
 }
 
-exports.watchFiles = watchFiles;
-exports.browserSync = browserSync;
+module.exports = { watchFiles, browserSync };
