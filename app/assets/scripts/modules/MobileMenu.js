@@ -8,15 +8,15 @@ class MobileMenu {
     this.events();
   }
 
-  events = () => {
-    this.menuIcon.click(this.toggleTheMenu);
-  };
+  events() {
+    this.menuIcon.click(this.toggleTheMenu.bind(this));
+  }
 
-  toggleTheMenu = () => {
+  toggleTheMenu() {
     this.menuContent.toggleClass("site-header__menu-content--is-visible");
     this.siteHeader.toggleClass("site-header--is-expanded");
     this.menuIcon.toggleClass("site-header__menu-icon--close-x");
-  };
+  }
 }
 
 export default MobileMenu;
