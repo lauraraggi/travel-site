@@ -9,21 +9,23 @@ class RevealOnScroll {
     this.createWaypoints();
   }
 
-  hideInitially = () => {
+  hideInitially() {
     this.itemsToReveal.addClass("reveal-item");
-  };
+  }
 
-  createWaypoints = () => {
-    this.itemsToReveal.each(() => {
+  createWaypoints() {
+    const that = this;
+    this.itemsToReveal.each(function() {
+      const currentItem = this;
       new Waypoint({
-        element: this,
+        element: currentItem,
         handler: function() {
           $(currentItem).addClass("reveal-item--is-visible");
         },
-        offset: this.offsetPercentage
+        offset: that.offsetPercentage
       });
     });
-  };
+  }
 }
 
 export default RevealOnScroll;
