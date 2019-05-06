@@ -446,11 +446,10 @@ a {
 
 .btn {
   background-color: #2f5572;
-  color: #FFF;
+  color: #fff;
   text-decoration: none;
-  padding: .75rem 1.2rem;
+  padding: 0.75rem 1.2rem;
   display: inline-block;
-
 }
 
 .btn--orange {
@@ -674,7 +673,6 @@ a {
   }
 
 @media (min-width: 800px) {
-
     .row__b-margin-until-medium {
       margin-bottom: 0;
     }
@@ -704,7 +702,6 @@ a {
   }
 
 @media (min-width: 1010px) {
-
     .row__b-margin-until-large {
       margin-bottom: 0;
     }
@@ -737,26 +734,24 @@ a {
 
 @media (min-width: 800px) {
 
-.row--equal-height-at-medium {
+.flexbox .row--equal-height-at-medium {
       display: flex
-
   }
   }
 
-.row--equal-height-at-medium > div {
+.flexbox .row--equal-height-at-medium > div {
       float: none;
       display: flex;
     }
 
 @media (min-width: 1010px) {
 
-.row--equal-height-at-large {
+.flexbox .row--equal-height-at-large {
       display: flex
-
   }
   }
 
-.row--equal-height-at-large > div {
+.flexbox .row--equal-height-at-large > div {
       float: none;
       display: flex;
     }
