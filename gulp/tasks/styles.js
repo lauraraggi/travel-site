@@ -14,4 +14,4 @@ function styles() {
     .pipe(gulp.dest("./app/temp/styles"));
 }
 
-exports.styles = styles;
+module.exports = styles;
